@@ -1,123 +1,68 @@
-/* Base styles */
 body {
+    font-family: 'SF Pro', 'Segoe UI', sans-serif;
     margin: 0;
-    font-family: 'Segoe UI', 'SF Pro Text', sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    color: #fff;
+    padding: 0;
+    background: linear-gradient(135deg, #1c1c1e, #3a3a3c);
+    color: #ffffff;
     overflow-x: hidden;
 }
 
-header {
-    position: fixed;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-section {
-    padding: 100px 0;
-    margin-top: 80px;
-}
-
 #home {
+    position: relative;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     text-align: center;
+    background: url('path-to-your-vector-art.svg') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
 }
 
-.intro h1 {
-    font-size: 3rem;
+.intro {
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-.intro p {
-    font-size: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
+section {
+    padding: 60px 20px;
 }
 
-/* Education & Experience Cards */
-.education-cards, .experience-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+h1, h2 {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 .education-cards .card, .experience-cards .card {
     background: rgba(255, 255, 255, 0.1);
-    margin: 15px;
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
 }
 
 .education-cards .card:hover, .experience-cards .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }
 
-/* Contact Form */
-#contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+#contact {
+    background: linear-gradient(135deg, #3a3a3c, #1c1c1e);
+    position: relative;
+    padding: 80px 20px;
+    color: #ffffff;
 }
 
-#contact-form input, #contact-form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-#contact-form button {
-    padding: 10px;
-    background-color: #0099ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#contact-form button:hover {
-    background-color: #007acc;
-}
-
-.contact-details {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Animations */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+.contact-details p {
+    font-size: 1rem;
+    line-height: 1.6;
 }
