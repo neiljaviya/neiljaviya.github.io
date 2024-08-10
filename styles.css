@@ -3,7 +3,7 @@ body {
     font-family: 'SF Pro', 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1c1c1e, #3a3a3c);
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Space blue and violet gradient */
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -73,7 +73,7 @@ p {
 }
 
 #contact {
-    background: linear-gradient(135deg, #3a3a3c, #1c1c1e);
+    background: linear-gradient(135deg, #2a5298, #1e3c72); /* Space blue and violet gradient */
     position: relative;
     padding: 80px 20px;
     color: #ffffff;
