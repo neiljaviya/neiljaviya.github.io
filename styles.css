@@ -37,14 +37,16 @@ body {
 
 /* Navbar styles */
 header {
-    background: rgba(0, 0, 0, 0); /* Transparent header */
+    background: rgba(0, 0, 0, 0); /* Slightly transparent black for header */
     padding: 20px;
-    text-align: right;
+    text-align: right; /* Right-align the content */
     position: fixed;
     width: 100%;
     top: 0;
+    right: 0;
     z-index: 1000;
     transition: top 0.2s ease-in-out;
+    height: 17.2rem;
 }
 
 nav ul {
@@ -84,24 +86,16 @@ nav ul li a:hover {
 
 /* Section styles */
 section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
     backdrop-filter: blur(10px);
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 h1, h2 {
     font-weight: bold;
     color: #ffffff; /* Font Color */
-    margin-bottom: 20px;
 }
 
 p {
+    font-size: 2.5rem;
     line-height: 1.4;
 }
 
@@ -112,16 +106,120 @@ p {
     padding-top: 5%;
     backdrop-filter: blur(10px);
     align-self: center;
-    font-size: 2rem;
-    font-family: "Kepler W03 Light SCd Cp";
+    font-size: 45px;
+    font-family: Kepler W03 Light SCd Cp;
 }
 
-/* Footer styles */
-footer {
-    text-align: center;
+.education-cards .card, .experience-cards .card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fafbfc;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.education-cards .card:hover, .experience-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+#contact {
+    background: rgba(255, 255, 255, 0.1); /* Match the section background */
+    position: relative;
+    padding: 80px 20px;
+    color: #fafbfc; /* Font Color */
+}
+
+.contact-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #2dba4e; /* Accent Color */
+    color: #ffffff; /* Font Color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #229a3b; /* Slightly darker accent color for hover */
+}
+
+.toggle-switch {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    width: 60px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+    	background: #f9dcdc;
+        border: 2px solid transparent;
+    }
+}
+
+.toggle-label:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 21px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-label:hover::before {
+        filter: drop-shadow(1px 1px 5px #ababab);
+    }
+
+.toggle-input:checked + .toggle-label {
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    &:hover {
+    	background: #9bedff;
+	border: 2px solid transparent;
+    }
+}
+
+.toggle-input:checked + .toggle-label:before {
+    transform: translateX(30px);
 }
 
 /* Responsive design */
@@ -159,65 +257,4 @@ footer {
     p {
         font-size: 0.8rem;
     }
-}
-
-/* Toggle Switch */
-.toggle-switch {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.toggle-input {
-    display: none;
-}
-
-.toggle-label {
-    width: 60px;
-    height: 25px;
-    background-color: transparent;
-    border-radius: 30px;
-    border: 2px solid #fff;
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.toggle-label:hover {
-    background: #f9dcdc;
-    border: 2px solid transparent;
-}
-
-.toggle-label:before {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 21px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.3s ease;
-}
-
-.toggle-label:hover::before {
-    filter: drop-shadow(1px 1px 5px #ababab);
-}
-
-.toggle-input:checked + .toggle-label {
-    background-color: transparent;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    &:hover {
-   	background: #9bedff;
-	border: 2px solid transparent;
-    }
-
-}
-
-.toggle-input:checked + .toggle-label:before {
-    transform: translateX(30px);
-    background-color: #fafbfc;
 }
