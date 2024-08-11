@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Background Video -->
+    
+    
+    <!-- Navbar -->
     <header>
         <nav>
+	    <div class="logo">Neil Javiya</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="education.html">Education</a></li>
@@ -20,15 +25,28 @@
         </nav>
     </header>
 
+    
+    <!-- Main Content -->
     <section id="home">
         <div class="intro">
-            <h1>Hi, I'm Neil Javiya</h1>
-            <p>
-                Dynamic and results-driven professional with a robust foundation in Business Analytics and Project Management,
-                fortified by a Bachelor's in Computer Engineering. I proficiently leverage a diverse skill set, showcasing adeptness
-                in operational consultancy and leadership in project endeavors.
-            </p>
-        </div>
+            <div class="background-video">
+        	<video autoplay muted loop id="backgroundVideo">
+            	    <source src="https://video.wixstatic.com/video/4e2524_f81975297769434b886596f7f12e4017/1080p/mp4/file.mp4" type="video/mp4">
+            		Your browser does not support the video tag.
+        	</video>
+    	    </div>
+            <p>	Dynamic and results-driven professional based in Toronto, ON, with a strong foundation in Business Analytics and Project Management. 
+		Currently enhancing expertise through certifications and practical experiences in the tech and business sectors. 
+		Graduated with a Post Graduate Certificate in Business Analytics and IT Project Management from Seneca Polytechnic and a Bachelor's in 
+		Computer Engineering from Gujarat Technological University. Passionate about leveraging analytical skills and project management acumen to 
+		drive impactful outcomes and excel in diverse project environments.
+	    </p>
+	    <div class="toggle-switch">
+    		<input type="checkbox" id="video-toggle" class="toggle-input">
+    		<label for="video-toggle" class="toggle-label"></label>
+	    </div>
     </section>
+<script src="scripts.js"></script>
 </body>
 </html>
+
