@@ -43,12 +43,9 @@ body {
 
 /* Navbar styles */
 header {
-    background: rgba(0, 0, 0, 0); /* Slightly transparent black for header */
     padding: 20px;
-    text-align: right; /* Right-align the content */
     position: fixed;
     width: 100%;
-    top: 0;
     right: 0;
     z-index: 1000;
     transition: top 0.2s ease-in-out;
@@ -56,14 +53,13 @@ header {
 }
 
 nav ul {
-    list-style-type: none;
     margin: 0;
-    padding: 0;
+    float: right;
 }
 
 nav ul li {
-    margin: 0 15px;
-    float: right;
+    display: inline;
+    padding-right: 20px;
 }
 
 .logo {
