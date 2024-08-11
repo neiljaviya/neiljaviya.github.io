@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toggle = document.getElementById('video-toggle');
     const videoElement = document.getElementById('backgroundVideo');
+    const svg = document.getElementById('morph-svg');
+    const path = svg.querySelector('path');
     
     // Array of video sources
     const videoLinks = [
@@ -49,10 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let currentIndex = 0;
+    
+    // Apply the flooding effect
+    svg.style.transform = 'scale(1)';
+    path.setAttribute('d', 'M 0 0 Q 50 100 100 0 V 0 H 0 Z');
 
-    toggle.addEventListener('change', () => {
+    setTimeout(() => {toggle.addEventListener('change', () => {
         currentIndex = (currentIndex + 1) % videoLinks.length;
         videoElement.src = videoLinks[currentIndex];
         videoElement.play();
     });
+            // Reverse the SVG morph to complete the transition
+            svg.style.transform = 'scale(1)';
+            path.setAttribute('d', 'M 0 100 Q 50 0 100 100 V 100 H 0 Z');
+        }, 1500); // Delay to match the transition time
 });
