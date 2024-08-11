@@ -258,3 +258,11 @@ form button:hover {
         font-size: 0.8rem;
     }
 }
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fafbfc;
+}
