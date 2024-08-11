@@ -115,20 +115,6 @@ h1, h2 {
     line-height: 1.40;
 }
 
-.education-cards .card, .experience-cards .card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease;
-}
-
-.education-cards .card:hover, .experience-cards .card:hover {
-    transform: translateY(-10px);
-}
-
 #contact {
     background: rgba(255, 255, 255, 0.1); /* Match the section background */
     position: relative;
@@ -272,3 +258,49 @@ footer {
     color: #fafbfc;
 }
 
+/*Education Section*/
+.education-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.education-list {
+    flex: 1;
+}
+
+.education-item {
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.education-item:hover {
+    background-color: #f0f0f0;
+}
+
+.education-details {
+    flex: 2;
+    position: relative;
+}
+
+.details {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.details.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}

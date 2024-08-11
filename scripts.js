@@ -23,23 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     var headerDiv = document.querySelector("header");
     var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
 
-    window.onscroll = function() {
+    window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
 
         // If we're scrolling up, or we haven't passed the header, show the header at the top
-        if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {  
+        if (prevScrollpos > currentScrollPos || currentScrollPos < headerBottom) {
             headerDiv.style.top = "0";
         } else {
             // Otherwise, we're scrolling down & have passed the header, so hide it
             headerDiv.style.top = "-7.2rem";
-        } 
+        }
 
         prevScrollpos = currentScrollPos;
     }
 
     const toggle = document.getElementById('video-toggle');
     const videoElement = document.getElementById('backgroundVideo');
-    
+
     // Array of video sources
     const videoLinks = [
         "https://video.wixstatic.com/video/4e2524_3f7134b315b44c55a5843d07bb9603aa/1080p/mp4/file.mp4",
@@ -49,10 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let currentIndex = 0;
-    
+
     toggle.addEventListener('change', () => {
         currentIndex = (currentIndex + 1) % videoLinks.length;
         videoElement.src = videoLinks[currentIndex];
         videoElement.play();
+    });
+
+    const educationItems = document.querySelectorAll('.education-item');
+    const detailsBlocks = document.querySelectorAll('.details');
+
+    educationItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const targetId = item.getAttribute('data-details');
+            const targetBlock = document.getElementById(targetId);
+
+            detailsBlocks.forEach(detail => detail.classList.remove('active'));
+            targetBlock.classList.add('active');
+        });
     });
 });
