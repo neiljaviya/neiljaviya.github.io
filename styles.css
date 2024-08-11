@@ -105,13 +105,8 @@ h1, h2 {
     padding-top: 5%;
     backdrop-filter: blur(10px);
     align-self: center;
-    font-size: 45px;
     font-family: Kepler W03 Light SCd Cp;
-}
-
-.intro p {
     font-size: 2.5rem;
-    line-height: 1.4;
 }
 
 .education-cards .card, .experience-cards .card {
@@ -182,8 +177,8 @@ form button:hover {
 }
 
 .toggle-label {
-    width: 60px;
-    height: 25px;
+    width: 80px;
+    height: 35px;
     background-color: transparent;
     border-radius: 30px;
     border: 2px solid #fff;
@@ -199,12 +194,12 @@ form button:hover {
 .toggle-label:before {
     content: "";
     position: absolute;
-    width: 25px;
-    height: 21px;
+    width: 40px;
+    height: 25px;
     background-color: #ffffff;
-    border-radius: 50%;
-    top: 2px;
-    left: 2px;
+    border-radius: 30px;
+    top: 5px;
+    left: 5px;
     transition: transform 0.3s ease;
 }
 
