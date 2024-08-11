@@ -66,6 +66,10 @@ nav ul li {
     color: #ffffff; /* Font Color */
     font-weight: bold;
     font-size: 1.5rem;
+    filter: drop-shadow(0px 0px 5px #ababab);
+    &:hover {
+        filter: drop-shadow(0px 0px 7px #d6d6d6);
+    }
 }
 
 nav ul li a {
