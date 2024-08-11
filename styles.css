@@ -267,6 +267,10 @@ footer {
     color: #000;
 }
 
+#education h2 {
+    color: #000;
+}
+
 .education-container {
     display: flex;
     width: 100vw;
