@@ -3,15 +3,50 @@ body {
     font-family: 'SF Pro', 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Space blue and violet gradient */
-    color: #ffffff;
+    color: #fafbfc; /* Font Color */
     overflow-x: hidden;
 }
 
+@font-face {
+    font-family: "Kepler W03 Light SCd Cp";
+    src: url("https://db.onlinewebfonts.com/t/fc13291877fa0c0e6e6d614326699903.eot");
+    src: url("https://db.onlinewebfonts.com/t/fc13291877fa0c0e6e6d614326699903.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/fc13291877fa0c0e6e6d614326699903.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/fc13291877fa0c0e6e6d614326699903.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/fc13291877fa0c0e6e6d614326699903.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/fc13291877fa0c0e6e6d614326699903.svg#Kepler W03 Light SCd Cp")format("svg");
+}
+
+/* Background Video */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Send the video to the background */
+}
+
+#backgroundVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire background */
+    object-position: center center;
+}
+
+/* Navbar styles */
 header {
-    background-color: #000000;
-    padding: 10px 0;
-    text-align: center;
+    background: rgba(0, 0, 0, 0); /* Slightly transparent black for header */
+    padding: 20px;
+    text-align: right; /* Right-align the content */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transition: top 0.2s ease-in-out;
+    height: 17.2rem;
 }
 
 nav ul {
@@ -21,41 +56,58 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
+    float: right;
+}
+
+.logo {
+    float: left;
+    margin-left: 4%;
+    color: #ffffff; /* Font Color */
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #ffffff; /* Font Color */
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
-    color: #00aaff;
+    color: #2dba4e; /* Accent Color */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+/* Section styles */
 section {
-    padding: 60px 20px;
+    backdrop-filter: blur(10px);
 }
 
 h1, h2 {
     font-weight: bold;
-    color: #ffffff;
+    color: #ffffff; /* Font Color */
 }
 
 p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 2.5rem;
+    line-height: 1.4;
 }
 
 .intro {
-    z-index: 2;
-    backdrop-filter: blur(10px);
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 5%;
+    backdrop-filter: blur(10px);
+    align-self: center;
+    font-size: 45px;
+    font-family: Kepler W03 Light SCd Cp;
 }
 
 .education-cards .card, .experience-cards .card {
@@ -73,10 +125,10 @@ p {
 }
 
 #contact {
-    background: linear-gradient(135deg, #2a5298, #1e3c72); /* Space blue and violet gradient */
+    background: rgba(255, 255, 255, 0.1); /* Match the section background */
     position: relative;
     padding: 80px 20px;
-    color: #ffffff;
+    color: #fafbfc; /* Font Color */
 }
 
 .contact-details p {
@@ -103,12 +155,69 @@ form button {
     font-size: 1rem;
     border-radius: 5px;
     border: none;
-    background-color: #00aaff;
-    color: #ffffff;
+    background-color: #2dba4e; /* Accent Color */
+    color: #ffffff; /* Font Color */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #0077cc;
+    background-color: #229a3b; /* Slightly darker accent color for hover */
+}
+
+.toggle-switch {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    width: 60px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+    	background: #f9dcdc;
+        border: 2px solid transparent;
+    }
+}
+
+.toggle-label:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 21px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-label:hover::before {
+        filter: drop-shadow(1px 1px 5px #ababab);
+    }
+
+.toggle-input:checked + .toggle-label {
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    &:hover {
+    	background: #9bedff;
+	border: 2px solid transparent;
+    }
+}
+
+.toggle-input:checked + .toggle-label:before {
+    transform: translateX(30px);
 }
