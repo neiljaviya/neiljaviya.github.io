@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    
-
     // Scroll behavior for the header
     var prevScrollpos = window.pageYOffset;
     var headerDiv = document.querySelector("header");

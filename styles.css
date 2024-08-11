@@ -37,16 +37,14 @@ body {
 
 /* Navbar styles */
 header {
-    background: rgba(0, 0, 0, 0); /* Slightly transparent black for header */
+    background: rgba(0, 0, 0, 0); /* Transparent header */
     padding: 20px;
-    text-align: right; /* Right-align the content */
+    text-align: right;
     position: fixed;
     width: 100%;
     top: 0;
-    right: 0;
     z-index: 1000;
     transition: top 0.2s ease-in-out;
-    height: 17.2rem;
 }
 
 nav ul {
@@ -86,16 +84,26 @@ nav ul li a:hover {
 
 /* Section styles */
 section {
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
     backdrop-filter: blur(10px);
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h1, h2 {
     font-weight: bold;
     color: #ffffff; /* Font Color */
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 2.5rem;
+    font-size: 1rem;
     line-height: 1.4;
 }
 
@@ -106,65 +114,64 @@ p {
     padding-top: 5%;
     backdrop-filter: blur(10px);
     align-self: center;
-    font-size: 45px;
-    font-family: Kepler W03 Light SCd Cp;
+    font-size: 2rem;
+    font-family: "Kepler W03 Light SCd Cp";
 }
 
-.education-cards .card, .experience-cards .card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+/* Footer styles */
+footer {
+    text-align: center;
     padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fafbfc;
 }
 
-.education-cards .card:hover, .experience-cards .card:hover {
-    transform: translateY(-10px);
+/* Responsive design */
+@media (max-width: 768px) {
+    .intro {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 40px 10px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
 }
 
-#contact {
-    background: rgba(255, 255, 255, 0.1); /* Match the section background */
-    position: relative;
-    padding: 80px 20px;
-    color: #fafbfc; /* Font Color */
+@media (max-width: 480px) {
+    .intro {
+        font-size: 1.2rem;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    section {
+        padding: 30px 5px;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
 }
 
-.contact-details p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-}
-
-form button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: none;
-    background-color: #2dba4e; /* Accent Color */
-    color: #ffffff; /* Font Color */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #229a3b; /* Slightly darker accent color for hover */
-}
-
+/* Toggle Switch */
 .toggle-switch {
     position: absolute;
     bottom: 20px;
@@ -186,10 +193,11 @@ form button:hover {
     position: relative;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    &:hover {
-    	background: #f9dcdc;
-        border: 2px solid transparent;
-    }
+}
+
+.toggle-label:hover {
+    background: #f9dcdc;
+    border: 2px solid transparent;
 }
 
 .toggle-label:before {
@@ -204,20 +212,13 @@ form button:hover {
     transition: transform 0.3s ease;
 }
 
-.toggle-label:hover::before {
-        filter: drop-shadow(1px 1px 5px #ababab);
-    }
-
 .toggle-input:checked + .toggle-label {
     background-color: transparent;
     border-radius: 30px;
-    border: 2px solid #fff;
-    &:hover {
-    	background: #9bedff;
-	border: 2px solid transparent;
-    }
+    border: 2px solid #ffffff;
 }
 
 .toggle-input:checked + .toggle-label:before {
-    transform: translateX(30px);
+    transform: translateX(35px);
+    background-color: #fafbfc;
 }
