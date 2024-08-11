@@ -51,8 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     
     toggle.addEventListener('change', () => {
+        videoElement.classList.remove('fading');
         currentIndex = (currentIndex + 1) % videoLinks.length;
         videoElement.src = videoLinks[currentIndex];
         videoElement.play();
+        videoElement.classList.add('fading');
     });
 });
