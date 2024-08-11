@@ -84,7 +84,6 @@ nav ul li a:hover {
 
 /* Section styles */
 section {
-    padding: 60px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
@@ -139,10 +138,6 @@ footer {
         font-size: 0.9rem;
     }
 
-    section {
-        padding: 40px;
-    }
-
     p {
         font-size: 0.9rem;
     }
@@ -159,10 +154,6 @@ footer {
 
     nav ul li a {
         font-size: 0.8rem;
-    }
-
-    section {
-        padding: 30px;
     }
 
     p {
