@@ -202,13 +202,22 @@ footer {
     transition: transform 0.3s ease;
 }
 
+.toggle-label:hover::before {
+    filter: drop-shadow(1px 1px 5px #ababab);
+}
+
 .toggle-input:checked + .toggle-label {
     background-color: transparent;
     border-radius: 30px;
     border: 2px solid #ffffff;
+    &:hover {
+   	background: #9bedff;
+	border: 2px solid transparent;
+    }
+
 }
 
 .toggle-input:checked + .toggle-label:before {
-    transform: translateX(35px);
+    transform: translateX(30px);
     background-color: #fafbfc;
 }
