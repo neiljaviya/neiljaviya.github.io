@@ -289,14 +289,42 @@ footer {
 }
 
 .education-item {
-    padding: 1rem;
-    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
     border-bottom: 1px solid #ccc;
     transition: background-color 0.3s ease;
 }
 
 .education-item:hover {
-    background-color: #e0e0e0;
+    background-color: #f0f0f0;
+}
+
+.degree-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.degree-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.degree-type p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+    text-align: right;
+}
+
+.degree-type {
+    flex-shrink: 0;
+    padding-left: 1rem;
+    text-align: right;
 }
 
 .education-details {
