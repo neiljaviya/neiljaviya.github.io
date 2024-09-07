@@ -324,3 +324,72 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Bento Grid Container */
+.bento-grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Adjust number based on desired layout */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Grid Items with specific spans to achieve Bento-style layout */
+.grid-item {
+  background-color: #f0f2f8;
+  color: #333;
+  font-size: 1.2em;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Different size items */
+.grid-item-education {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.grid-item-experience {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.grid-item-projects {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.grid-item-achievements {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.grid-item-resume {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.grid-item-contact {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bento-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-item {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+}
