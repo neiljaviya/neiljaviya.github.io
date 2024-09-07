@@ -68,4 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
             targetBlock.classList.add('active');
         });
     });
+    
+    const bentoItems = document.querySelectorAll('.bento-item');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    bentoItems.forEach(item => {
+        observer.observe(item);
+    });
 });
