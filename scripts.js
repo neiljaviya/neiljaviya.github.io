@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1
     });
 
-    bentoItems.forEach(item => {
+        bentoItems.forEach(item => {
         observer.observe(item);
     });
 });
